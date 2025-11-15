@@ -2,9 +2,10 @@ package main
 
 import "fmt"
 
-type Point struct{ X, Y int }
+type Point struct {
+	X, Y int
+}
 
-// Конструктор возвращает указатель на Point
 func NewPoint(x, y int) *Point {
 	return &Point{X: x, Y: y}
 }
