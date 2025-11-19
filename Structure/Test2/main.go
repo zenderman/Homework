@@ -10,7 +10,6 @@ func NewPoint(x, y int) *Point {
 	return &Point{X: x, Y: y}
 }
 
-// Move изменяет состояние структуры через указатель
 func (p *Point) Move(dx, dy int) {
 	p.X += dx
 	p.Y += dy
@@ -22,7 +21,7 @@ func (p *Point) String() string {
 }
 
 func main() {
-	// Тест из задания
+
 	fmt.Println("=== Основной тест ===")
 	p := NewPoint(1, 1)
 	fmt.Printf("Создан: %s\n", p)
