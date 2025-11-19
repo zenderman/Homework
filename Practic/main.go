@@ -36,6 +36,12 @@ func DeleteElement(nums []int, num int) []int {
 	return nums
 }
 
+func InsertElement(nums []int, index int, val int) []int {
+	nums = append(nums[:index+1], val)
+
+	return nums
+}
+
 func main() {
 
 	fmt.Println(Sum([]int{1, 2, 3}))
@@ -44,4 +50,6 @@ func main() {
 	Reverse(n1)
 	fmt.Println(n1)
 	fmt.Println(DeleteElement(n1, 2))
+	fmt.Println(n1)
+	fmt.Println(InsertElement(n1, 2, 55))
 }
