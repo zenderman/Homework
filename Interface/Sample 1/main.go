@@ -28,9 +28,11 @@ func SayHello(g Greeter) string {
 
 func main() {
 
-	andrey := User{"Andrey"}
+	var SomeGreeter Greeter
 
-	fmt.Println(SayHello(andrey))
+	SomeGreeter = User{"Andrey"}
+
+	fmt.Println(SayHello(SomeGreeter))
 
 	fmt.Println(User{"Кирилл"}.Greet())
 	fmt.Println(Robot{"T-800"}.Greet())
