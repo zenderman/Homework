@@ -28,6 +28,10 @@ func SayHello(g Greeter) string {
 
 func main() {
 
+	andrey := User{"Andrey"}
+
+	fmt.Println(SayHello(andrey))
+
 	fmt.Println(User{"Кирилл"}.Greet())
 	fmt.Println(Robot{"T-800"}.Greet())
 
