@@ -2,39 +2,31 @@ package main
 
 import "fmt"
 
-type Greeter interface {
-	Greet() string
+type Worker interface {
+	Work()
 }
 
-type User struct {
-	Name string
+type WorkerImpl struct {
+	WorkDone bool
 }
 
-func (u User) Greet() string {
-	return "Привет, " + u.Name
+func (w *WorkerImpl) Work() {
+	fmt.Println("I'm working")
+	w.WorkDone = true
 }
 
-type Robot struct {
-	Model string
-}
-
-func (r Robot) Greet() string {
-	return "Привет, я робот " + r.Model
-}
-
-func SayHello(g Greeter) string {
-	return g.Greet()
+func NewWorker() Worker {
+	var w *WorkerImpl = nil
+	w = &WorkerImpl{}
+	return w
 }
 
 func main() {
+	var w Worker
+	w = NewWorker()
+	//_ = w
 
-	var SomeGreeter Greeter
-
-	SomeGreeter = User{"Andrey"}
-
-	fmt.Println(SayHello(SomeGreeter))
-
-	fmt.Println(User{"Кирилл"}.Greet())
-	fmt.Println(Robot{"T-800"}.Greet())
-
+	if w != nil {
+		w.Work()
+	}
 }
