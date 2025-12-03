@@ -49,7 +49,7 @@ func main() {
 	var l logger.Iloger = &logger.LoggerApi{}
 
 	l.Info(&LogMessage{"123", "500rub", "User paid"})
-	l.Warn(&LogMessage{"321", "505rub", "User paid"})
+	l.Warn(&LogMessage{"555", "505rub", "User paid"})
 
 	fmt.Println()
 
