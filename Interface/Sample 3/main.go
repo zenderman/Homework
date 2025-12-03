@@ -15,7 +15,10 @@ func (u User) Greet() string {
 }
 
 func PrintGreeter(g Greeter) {
-	fmt.Println(g.Greet())
+	u, ok := g.(User)
+	if ok {
+		fmt.Println(u.Greet())
+	}
 }
 
 func main() {
@@ -31,6 +34,6 @@ func main() {
 		fmt.Println("это строка", s)
 	}
 
-	var u *User = &User{"Ivan"}
+	var u User = User{Name: "Ivan"}
 	PrintGreeter(u)
 }
